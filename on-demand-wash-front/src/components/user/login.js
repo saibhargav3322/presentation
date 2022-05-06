@@ -2,6 +2,8 @@ import axios from 'axios';
 import React,{useState} from 'react';
 import {useNavigate} from 'react-router';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 function Login()  {
 
@@ -9,8 +11,19 @@ function Login()  {
         username:"",
         password:""
     })
+    const[error,setError]=useState(null);
 
     const navigate =  useNavigate();
+
+    const style={
+        color:'red'
+    }
+
+    const notify = ()=>{
+ 
+        // Calling toast method by passing string
+        toast('invalid')
+    }
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -20,11 +33,12 @@ function Login()  {
         .then(res => {
             console.log(res.data)
             localStorage.setItem('token',res.data);
-            navigate("/usernav")
+            navigate("/userhome")
 
         })
         .catch(err => {
-            console.log(err)
+
+            setError("Invalid Credientials")
         })
     };
 
@@ -37,23 +51,24 @@ function Login()  {
     return (
         <form onSubmit={handleSubmit}>
 
-<Link className='navbar-brand' to={'/'}>Home</Link>
+{/* <Link className='navbar-brand' to={'/'}>Home</Link> */}
         <h3>Login</h3>
 
-        <div className="form-group">
-          <label>username</label>
+        {error && <div style={style} >{error}</div>}
+        <div className="mb-3">
+          <label>username</label>      
           <input type="text" className="form-control" placeholder="username" 
           onChange={e=>handle(e)} id="username" value={data.username}/>
       </div>
        
-      <div className="form-group">
+      <div className="mb-3">
           <label>password</label>
           <input type="password" className="form-control" placeholder="password" 
            onChange={e=>handle(e)} id="password" value={data.password}/>
       </div>
 
-      <div className='form-group'>
-          <button className='btn btn-primary btn-block' >Login</button>
+      <div className="d-grid">
+          <button className='btn btn-primary' >Login</button>
       </div>
       
     </form>
