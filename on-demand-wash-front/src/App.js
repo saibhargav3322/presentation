@@ -14,8 +14,9 @@ import Usernav from './components/user/usernav'
 import Userreg from './components/user/register'
 import Userorder from './components/user/addorder/addorder'
 import Usergetorder from './components/user/getorders/Getorders'
-import Userreview from './components/user/givereview/givereview'
+import Userreview from './components/user/givereview/givereview.service.'
 import Userhome from './components/user/userhome'
+import Userupdate from './components/user/profile/profile'
 
 import Washerlogin from './components/washer/washerlogin'
 import Washernav from './components/washer/washernav'
@@ -46,6 +47,8 @@ function App() {
           <Route path="/givereview" element={<Userreview/>} /> 
           <Route path="/Services" element={<Service/>} /> 
           <Route path="/userhome" element={<Userhome/>} /> 
+          <Route path="/userhome" element={<Userhome/>} /> 
+          <Route path="/userupdate" element={<Userupdate/>} /> 
         </Routes>
       </BrowserRouter>
     </div>

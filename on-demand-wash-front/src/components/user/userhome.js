@@ -22,7 +22,7 @@ function Userhome(props) {
                 <p>Soft Cloth Tunnel Wash</p>
                 <p> Spot Free Rinse </p>
                 <p> Turbo Air Dry</p>
-                <button className="pack" onClick={() => { navigate('/Booking') }}>Book Now </button></div>
+                <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now </button></div>
             </div>
           </div>
 
@@ -40,7 +40,7 @@ function Userhome(props) {
                 <p> In-Tunnel Wheel Cleaner</p>
                 <p>Triple Foam Wax</p>
                 <p>Clear Coat Conditioner</p>
-                <button className="pack" onClick={() => { navigate('/Booking') }}>Book Now</button></div>
+                <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now</button></div>
             </div>
           </div>
 
@@ -57,7 +57,7 @@ function Userhome(props) {
                 <p>The Super Wash plus…</p>
                 <p>In-Tunnel Tire Shine</p>
                 <p>Underbody Wash</p>
-                <button className="pack" onClick={() => { navigate('/Booking') }}>Book Now</button></div>
+                <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now</button></div>
             </div>
           </div>
 
@@ -75,7 +75,7 @@ function Userhome(props) {
                 <p>Triple Foam Wax</p>
                 <p>Wheels Finished by Hand</p>
                 <p>Tire Shine by Hand</p>
-                <button className="pack" onClick={() => { navigate('/Booking') }}>Book Now</button></div>
+                <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now</button></div>
             </div>
           </div>
         </div>

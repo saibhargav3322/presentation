@@ -57,7 +57,7 @@ function Navbar() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/usernav'
+                to='/userhome'
                 className='nav-links'
 
               >

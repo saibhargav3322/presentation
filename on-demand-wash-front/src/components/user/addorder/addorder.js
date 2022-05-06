@@ -14,10 +14,11 @@ function Addorder(props) {
         streetname:"",  
         landmark:"",
         packid:"",
-        payment:""
+        payment:"success"
     })
 
     const navigate=useNavigate();
+    const [error,setError]=useState();
 
     axios.interceptors.request.use(
         config => {
@@ -45,9 +46,20 @@ function Addorder(props) {
                 .then(res=>{
                     console.log(res.data);
                     alert("Order added successfully");
-                    navigate("./userhome")
+                    navigate("/userhome")
                 },
-               );
+               ).catch(err => {
+                   if(err.response.status === 403)
+                   {
+
+                setError("please login")
+                   }
+                   if(err.response.status === 400)
+                   {
+
+                setError("please enter all details")
+                   }
+            })
 
         }
 
@@ -61,22 +73,24 @@ function Addorder(props) {
             <Navbar/>
         <h1>Enter Order Details</h1>
         <div  > 
+            {error && <div>{error}</div>}
             <form onSubmit={(e)=>submit(e)} className='addform'>
-                
+                <label>carbrand: </label>
                 <input onChange={(e)=>handle(e)} id="carbrand" value={data.carbrand} placeholder='carbrand' type="text"  /><br/><br/>
-
+                <label>carmodel: </label>
                 <input onChange={(e)=>handle(e)} id="carmodel" value={data.carmodel} placeholder='carmodel' type="text"/><br/><br/>
-
+                <label>date: </label>
                 <input onChange={(e)=>handle(e)} id="date" value={data.date} placeholder='date' type="date"/><br/><br/>
-
+                <label>housenumber: </label>
                 <input onChange={(e)=>handle(e)} id="housenumber" value={data.housenumber} placeholder='housenumber' type="text"/><br/><br/>
-
+                <label>landmark: </label>
                 <input onChange={(e)=>handle(e)} id="landmark" value={data.landmark} placeholder='landmark' type="text"/><br/><br/>
+                <label>streetname: </label>
                 <input onChange={(e)=>handle(e)} id="streetname" value={data.streetname} placeholder='streetname' type="text"/><br/><br/>
-
+                <label>packid: </label>
                 <input onChange={(e)=>handle(e)} id="packid" value={data.packid} placeholder='packid' type="number"/><br/><br/>
-
-                <input onChange={(e)=>handle(e)} id="payment" value={data.payment} placeholder='payment' type="text"/><br/><br/>
+                <label>payment: </label>
+                <input onChange={(e)=>handle(e)}  id="payment" value={data.payment} placeholder='payment' type="text"/><br/><br/>
 
                 <button>submit</button>
             </form>

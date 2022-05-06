@@ -43,10 +43,9 @@ function Usernav(props) {
                  Orderstatus
                </a>
              </li>
-             <br></br>
              <li className="nav-item">
-               <a href="/givereview" className="nav-link" >
-                 Rating
+               <a href="/userupdate" className="nav-link" >
+                 UpdateProfile
                </a>
              </li>
              <li className="nav-item">

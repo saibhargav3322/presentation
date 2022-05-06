@@ -28,7 +28,7 @@ const Services = () => {
                 <h3>Soft Cloth Tunnel Wash</h3>
                 <h3> Spot Free Rinse </h3>
                 <h3> Turbo Air Dry</h3>
-                <button className="pack" onClick={() => { navigate('/Booking') }}>Book Now </button></div>
+                <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now </button></div>
             </div>
           </div>
 
@@ -46,7 +46,7 @@ const Services = () => {
                 <h3> In-Tunnel Wheel Cleaner</h3>
                 <h3>Triple Foam Wax</h3>
                 <h3>Clear Coat Conditioner</h3>
-                <button className="pack" onClick={() => { navigate('/Booking') }}>Book Now</button></div>
+                <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now</button></div>
             </div>
           </div>
 
@@ -63,7 +63,7 @@ const Services = () => {
                 <h3>The Super Wash plus…</h3>
                 <h3>In-Tunnel Tire Shine</h3>
                 <h3>Underbody Wash</h3>
-                <button className="pack" onClick={() => { navigate('/Booking') }}>Book Now</button></div>
+                <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now</button></div>
             </div>
           </div>
 
@@ -81,7 +81,7 @@ const Services = () => {
                 <h3>Triple Foam Wax</h3>
                 <h3>Wheels Finished by Hand</h3>
                 <h3>Tire Shine by Hand</h3>
-                <button className="pack" onClick={() => { navigate('/Booking') }}>Book Now</button></div>
+                <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now</button></div>
             </div>
           </div>
         </div>
