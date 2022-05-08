@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 function Profile(props) {
 
     const [data,setData]=useState({})
+    const [username,setUsername]=useState()
+    const[passwordd,setPassword]=useState()
     const navigate=useNavigate();
 
     axios.interceptors.request.use(
@@ -24,6 +26,8 @@ function Profile(props) {
             axios.get(url )
             .then(res=>{
               setData(res.data);
+              setUsername(res.data.username)
+              setPassword(res.data.password)
               console.log(res.data)
             },
             ).catch=(err)=>{
@@ -56,7 +60,13 @@ function Profile(props) {
             axios.put('http://localhost:9095/user/update',null,{params:{name,gmail,password,location,Username}}).then(
                 res => {
                     console.log(res.data)
-                    navigate("/userhome")
+                    // //localStorage.removeItem('token')
+                    //  navigate("/userhome")
+                    //  alert(username)
+                    //  alert(data.username)
+                    //  alert(passwordd)
+                    //  alert(data.password)
+
                 }
             ).catch(
                 err => {
@@ -66,6 +76,18 @@ function Profile(props) {
                     }
                 }
             )
+            if(username === data.username &&  passwordd === data.password)
+            {
+               
+                navigate("/userhome")
+                
+            }
+            else{
+
+            
+            navigate("/userlogin")
+// localStorage.removeItem('token')
+            }
         };
 
 
@@ -77,7 +99,22 @@ function Profile(props) {
                 const newdata={...data}
                 newdata[e.target.id]=e.target.value
                 setData(newdata)
-                
+            }
+
+           const  deleteaccount=(e)=>{
+
+                e.preventDefault();
+                axios.delete('http://localhost:9095/user/delete').then(
+                    res=>
+                    {
+                        console.log(res.data)
+                        localStorage.removeItem('token')
+                        navigate("/")
+                    }).catch(
+                        err=>{
+                            console.log(err)
+                        }
+                    )
             }
     return (
         <div>
@@ -115,6 +152,12 @@ function Profile(props) {
         </div>
         
       </form>
+
+      <h3>Delete your account?</h3>
+
+      <div className='form-group'>
+            <button onClick={(e)=>deleteaccount(e)} className='btn btn-primary btn-block'> Delete </button>
+        </div>
             
         </div>
     );

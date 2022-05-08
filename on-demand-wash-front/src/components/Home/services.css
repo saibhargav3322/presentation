@@ -21,6 +21,7 @@
   height: 300px;
   
   float:left;
+  justify-content: space-around;
   
 }
 

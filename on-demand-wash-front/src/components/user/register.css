@@ -1,0 +1,53 @@
+.mainreg{
+    padding: 50px 30px;
+}
+
+.signup{
+    text-align: center;
+    padding: 20px;
+    font-size: 40px;
+    font-weight: 750;
+    font-style: italic;
+    position: relative;
+    color: navy;
+}
+
+.register{
+    padding: 1px 500px;
+}
+
+.form-group{
+    font-style: italic;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+}
+
+.form-control{
+    font-size: 15px;
+    border-radius: 15px;
+
+}
+
+.btn{
+    text-align: center;
+    margin-top: 360px;
+    font-size: 20px;
+    font-family: "montserrat";
+    cursor: pointer;
+    margin: 10px;
+}
+
+.btn:hover{
+    height: 50px;
+    margin: 10px;
+}
+
+.regimage{
+    margin-left: -50%;
+    width: 100%;
+    position: absolute;
+    white-space: nowrap;
+    opacity: 0.8;
+}

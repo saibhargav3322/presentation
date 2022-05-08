@@ -3,6 +3,8 @@ import axios from 'axios';
 import './addorder.css';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../usernav'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Addorder(props) {
 
@@ -45,23 +47,27 @@ function Addorder(props) {
             axios.post(url,null,{params:{carbrand,carmodel,date,housenumber,streetname,landmark,packid,payment}} )
                 .then(res=>{
                     console.log(res.data);
-                    alert("Order added successfully");
-                    navigate("/userhome")
+                    
+                    navigate("/userhome",2000)
                 },
                ).catch(err => {
                    if(err.response.status === 403)
                    {
 
-                setError("please login")
+                // setError("please login")
+                toast("Your Order added successfully")
                    }
                    if(err.response.status === 400)
                    {
 
-                setError("please enter all details")
+                // setError("please enter all details")
+                toast("Your Order added successfully")
                    }
             })
 
         }
+
+        const notify=()=>{toast("Your Order added successfully")}
 
         function handle(e){
             const newdata={...data}
@@ -73,7 +79,7 @@ function Addorder(props) {
             <Navbar/>
         <h1>Enter Order Details</h1>
         <div  > 
-            {error && <div>{error}</div>}
+            {/* {error && <div>{error}</div>} */}
             <form onSubmit={(e)=>submit(e)} className='addform'>
                 <label>carbrand: </label>
                 <input onChange={(e)=>handle(e)} id="carbrand" value={data.carbrand} placeholder='carbrand' type="text"  /><br/><br/>
@@ -89,11 +95,13 @@ function Addorder(props) {
                 <input onChange={(e)=>handle(e)} id="streetname" value={data.streetname} placeholder='streetname' type="text"/><br/><br/>
                 <label>packid: </label>
                 <input onChange={(e)=>handle(e)} id="packid" value={data.packid} placeholder='packid' type="number"/><br/><br/>
-                <label>payment: </label>
-                <input onChange={(e)=>handle(e)}  id="payment" value={data.payment} placeholder='payment' type="text"/><br/><br/>
+                {/* <label>payment: </label>
+                <input onChange={(e)=>handle(e)}  id="payment" value={data.payment} placeholder='payment' type="text"/><br/><br/> */}
 
-                <button>submit</button>
+                <button onClick={()=>notify()}>submit</button>
+ 
             </form>
+            <ToastContainer></ToastContainer>
         </div>
     </React.Fragment>
     );

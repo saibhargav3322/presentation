@@ -1,6 +1,8 @@
 import React, { Component, useState } from 'react'
 import axios from  'axios';
 import {useNavigate} from 'react-router';
+import Navbar from './usernav'
+import './register.css'
 
 function Register() {
 
@@ -48,8 +50,11 @@ function Register() {
     }
 
     return (
-      <form onSubmit={handleSubmit}>
-          <h3>Sign up</h3>
+        <React.Fragment>
+        <Navbar/>
+      <form className='register' onSubmit={handleSubmit}>
+          <img src='./images/regpic.jpg' className='regimage'></img>
+          <h2 className='signup'>Sign up</h2>
           <div className="form-group">
             <label>name</label>
             <input type="text" className="form-control" placeholder="Name" 
@@ -81,6 +86,7 @@ function Register() {
         </div>
         
       </form>
+      </React.Fragment>
     )
 }
 

@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react'
 import axios from  'axios';
 import {useNavigate} from 'react-router';
+import Washernav from './washernav'
 
 function Register() {
 
@@ -28,7 +29,7 @@ function Register() {
         axios.post('http://localhost:9096/washer/addwasher',userdetails).then(
             res => {
                 console.log(res.data)
-                navigate("/userlogin")
+                navigate("/washerlogin")
             }
         ).catch(
             err => {
@@ -48,8 +49,11 @@ function Register() {
     }
 
     return (
-      <form onSubmit={handleSubmit}>
-          <h3>Sign up</h3>
+        <React.Fragment>
+        <Washernav></Washernav>
+      <form className='register' onSubmit={handleSubmit}>
+      <img src='./images/regpic.jpg' className='regimage'></img>
+          <h2 className='signup'>Sign up</h2>
           <div className="form-group">
             <label>name</label>
             <input type="text" className="form-control" placeholder="Name" 
@@ -81,6 +85,7 @@ function Register() {
         </div>
         
       </form>
+      </React.Fragment>
     )
 }
 

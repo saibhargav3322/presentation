@@ -20,11 +20,16 @@ function Usernav(props) {
       };
     return (
           <main>
+
             <nav className='navbar navbar-expand navbar-light fixed-top'>
+            <h2>User Portal</h2>
+            <a href="/" className="nav-link" >
+                 HOME
+               </a>
+
                 <div className='container'>
        {currentUser ? (
-           <div className="navbar-nav ms-auto">
-   
+           <div className="navbar-nav ms-auto">   
              <li className="nav-item">
                <a href="/userhome" className="nav-link" >
                  userhome
@@ -45,7 +50,7 @@ function Usernav(props) {
              </li>
              <li className="nav-item">
                <a href="/userupdate" className="nav-link" >
-                 UpdateProfile
+                 Profile
                </a>
              </li>
              <li className="nav-item">
@@ -58,9 +63,16 @@ function Usernav(props) {
          : (
            
 
+
            
              
             <div className="navbar-nav ms-auto">
+
+<li className="nav-item">
+               <a href="/userhome" className="nav-link" >
+                 userhome
+               </a>
+             </li>
              <li className="nav-item">
                <Link to={"/userlogin"} className="nav-link">
                  Login

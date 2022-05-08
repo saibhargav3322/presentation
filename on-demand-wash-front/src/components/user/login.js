@@ -3,6 +3,8 @@ import React,{useState} from 'react';
 import {useNavigate} from 'react-router';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import Navbar from './usernav'
+import './/login.css'
 
 
 function Login()  {
@@ -49,10 +51,12 @@ function Login()  {
         
     }
     return (
-        <form onSubmit={handleSubmit}>
-
+        <React.Fragment>
+        <Navbar/>
+        <form className='loginForm' onSubmit={handleSubmit}>
+        <img src='/images/loginfinal.jpg' className='image'></img>
 {/* <Link className='navbar-brand' to={'/'}>Home</Link> */}
-        <h3>Login</h3>
+        <h2 className='login'>Login</h2>
 
         {error && <div style={style} >{error}</div>}
         <div className="mb-3">
@@ -72,6 +76,7 @@ function Login()  {
       </div>
       
     </form>
+    </React.Fragment>
     )
 }
 

@@ -1,9 +1,11 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
-import Review from '../givereview/givereview.service.'
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Navbar from '../usernav'
 import rating from '../givereview/givereview.service.'
+import { MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Getorders(props) {
 
@@ -38,21 +40,24 @@ function Getorders(props) {
             const parameters=(a,b,c)=>{
 
             //  rating.setdata(a,b,c);
+            toast("thanks for rarings!");
              setMsg(rating.postmethod(a,b,c));
 
+             
 
              }
 
              const statuscheck=(a,b)=>{
 
-              if(a==="completed")
+              if(a.includes("completed"))
               {
                 return(
                   <React.Fragment>
-                  <button onClick={()=>{parameters("worst",0,b)}}>worst</button>
-                  <button onClick={()=>{parameters("average",4,b)}}>average</button>
-                  <button onClick={()=>{parameters("good",7,b)}}>good</button>
-                  <button onClick={()=>{parameters("best",10,b)}}>best</button>
+                  <button onClick={()=>{parameters("worst",0,b)}} className="btn btn-outline-primary btn-sm m-0 waves-effect" >worst</button>
+                  <button onClick={()=>{parameters("average",4,b)}} className="btn btn-outline-primary btn-sm m-0 waves-effect">average</button>
+                  <button onClick={()=>{parameters("good",7,b)}} className="btn btn-outline-primary btn-sm m-0 waves-effect">good</button>
+                  <button onClick={()=>{parameters("best",10,b)}} className="btn btn-outline-primary btn-sm m-0 waves-effect">best</button>
+                  <ToastContainer />
                   </React.Fragment>
                 )
               }
@@ -65,10 +70,10 @@ function Getorders(props) {
                       <Navbar/>
             <h1>Your orders</h1>
 
-            {msg && <p>{msg}</p>}
-
-            <table>
-          <thead className="thead-dark">
+            {/* {msg && <p>{msg}</p>} */}
+            {/* <MDBTable bordered borderColor="primary" > */}
+            <table class="table table-striped table-responsive-md btn-table">
+            <thead>
             <tr>
 
               <th>name</th>
@@ -80,8 +85,10 @@ function Getorders(props) {
               <th>washpack</th>
               <th>rating</th>
             </tr>
-          </thead>
-          <tbody>
+            {/* </MDBTableHead> */}
+            </thead>
+            {/* <MDBTableBody> */}
+            <tbody>
 
               {
                   data.map(d=>(
@@ -105,12 +112,15 @@ function Getorders(props) {
                               </React.Fragment>
                             }
                           } */}
-                          {statuscheck(d.status,d.washerUsername)}
+                          <td>{statuscheck(d.status,d.washerUsername)}</td>
+                          
 
                       </tr>
                   ))
               }
+          {/* </MDBTableBody> */}
           </tbody>
+          {/* </MDBTable> */}
           </table>
         </div>
     );

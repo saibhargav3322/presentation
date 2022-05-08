@@ -78,6 +78,22 @@ function Userhome(props) {
                 <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now</button></div>
             </div>
           </div>
+
+          <div class='flip-card'>
+            <div className='flip-card-inner'>
+              <div class='flip-card-front'>
+                <h2>The Wheel Deal</h2>
+                <h1 className='mo'>Rs.1499</h1>
+              </div>
+              <div class='flip-card-back'>
+                <p>Deluxe Wash Package plus…</p>
+                <p>Clear Coat Conditioner</p>
+                <p>Triple Foam Wax</p>
+                <p>Wheels Finished by Hand</p>
+                <p>Tire Shine by Hand</p>
+                <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now</button></div>
+            </div>
+          </div>
         </div>
         </div>
     );

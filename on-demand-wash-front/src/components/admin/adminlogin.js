@@ -2,6 +2,8 @@ import axios from 'axios';
 import React,{useState} from 'react';
 import {useNavigate} from 'react-router';
 import { Link } from 'react-router-dom';
+import Adminnav from './adminnav'
+import '../user/login.css'
 
 function Login()  {
 
@@ -20,7 +22,7 @@ function Login()  {
         .then(res => {
             console.log(res.data)
             localStorage.setItem('admintoken',res.data);
-            navigate("/adminnav")
+            navigate("/adminhome")
 
         })
         .catch(err => {
@@ -37,11 +39,12 @@ function Login()  {
         setData(newdata)
         
     }
-    return (
-        <form onSubmit={handleSubmit}>
-
-<Link className='navbar-brand' to={'/'}>Home</Link>
-        <h3>Login</h3>
+    return (<>
+    
+        <Adminnav></Adminnav>
+        <form className='loginForm' onSubmit={handleSubmit}>
+        <img src='/images/loginfinal.jpg' className='image'></img>
+        <h2 className='login'>Login</h2>
 
         <div className="form-group">
           <label>username</label>
@@ -60,6 +63,7 @@ function Login()  {
       </div>
       
     </form>
+    </>
     )
 }
 

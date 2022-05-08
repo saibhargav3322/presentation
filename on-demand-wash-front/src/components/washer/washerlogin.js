@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React,{useState} from 'react';
 import {useNavigate} from 'react-router';
+import Washernav from './washernav'
 
 function Login()  {
 
@@ -19,7 +20,7 @@ function Login()  {
         .then(res => {
             console.log(res.data)
             localStorage.setItem('washertoken',res.data);
-            navigate("/washernav")
+            navigate("/washerhome")
 
         })
         .catch(err => {
@@ -37,8 +38,11 @@ function Login()  {
         
     }
     return (
-        <form onSubmit={handleSubmit}>
-        <h3>Login</h3>
+        <React.Fragment>
+        <Washernav></Washernav>
+        <form className='loginForm' onSubmit={handleSubmit}>
+        <img src='/images/loginfinal.jpg' className='image'></img>
+        <h2 className='login'>Washer Login</h2>
 
         <div className="form-group">
           <label>username</label>
@@ -57,6 +61,7 @@ function Login()  {
       </div>
       
     </form>
+    </React.Fragment>
     )
 }
 

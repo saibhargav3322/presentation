@@ -1,0 +1,49 @@
+.main{
+    padding: 90px 30px;
+}
+
+h2{
+    text-align: center;
+    padding: 20px;
+    color: black;
+    position: relative;
+    font-size: 40px;
+    font-style: italic;
+}
+
+.loginForm{
+    padding: 0px 500px;
+}
+
+.mb-3{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    position: relative;
+}
+
+.d-grid{
+    text-align: center;
+    margin-top: 360px;
+    padding: 0px 150px;
+    font-size: 20px;
+    font-family: "montserrat";
+    cursor: pointer;
+    margin: 10px;
+    position: relative;
+}
+
+
+.d-grid:hover{
+    height: 50px;
+    margin: 10px;
+}
+
+
+.image{
+    margin-left: -50%;
+    width: 100%;
+    position: absolute;
+    white-space: nowrap;
+    opacity: 0.9;
+}

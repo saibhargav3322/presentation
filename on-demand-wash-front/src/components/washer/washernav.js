@@ -18,9 +18,33 @@ function Usernav(props) {
     return (
         <div>
             <nav className='navbar navbar-expand navbar-light fixed-top'>
+              <h2>Washer Portal</h2>
+              <a href="/" className="nav-link" >
+                 HOME
+               </a>
                 <div className='container'>
        {currentUser ? (
            <div className="navbar-nav ms-auto">
+              <li className="nav-item">
+               <Link to={"/washerhome"} className="nav-link">
+                 Washerhome
+               </Link>
+             </li>
+             <li className="nav-item">
+               <Link to={"/washerorders"} className="nav-link">
+                 Orders
+               </Link>
+             </li>
+             <li className="nav-item">
+               <Link to={"/washerratings"} className="nav-link">
+                 Ratings
+               </Link>
+             </li>
+             <li className="nav-item">
+               <Link to={"/washerprofile"} className="nav-link">
+                 Profile
+               </Link>
+             </li>
              <li className="nav-item">
                <a href="/" className="nav-link" onClick={logOut}>
                  Logout
@@ -29,22 +53,25 @@ function Usernav(props) {
            </div>
          ) 
          : (
-            <div>
+            
             <div className="navbar-nav ms-auto">
+              <li className="nav-item">
+               <Link to={"/washerhome"} className="nav-link">
+                 Washerhome
+               </Link>
+             </li>
              <li className="nav-item">
                <Link to={"/washerlogin"} className="nav-link">
                  Login
                </Link>
              </li>
-           </div>
-            <div className="navbar-nav ms-auto">
              <li className="nav-item">
                 <Link to={"/washerreg"} className="nav-link">
                  Register
                 </Link>
              </li>
-            </div>
-             </div>
+           </div>
+             
          )
          }
          </div>
