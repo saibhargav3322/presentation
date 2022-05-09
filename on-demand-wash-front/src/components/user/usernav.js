@@ -1,6 +1,7 @@
 import React, { Component,useState,useEffect } from "react";
 import {Link, useNavigate} from "react-router-dom";
 import Login from './login'
+import '../Home/Navbar.css'
 
 
 function Usernav(props) {
@@ -22,10 +23,12 @@ function Usernav(props) {
           <main>
 
             <nav className='navbar navbar-expand navbar-light fixed-top'>
-            <h2>User Portal</h2>
-            <a href="/" className="nav-link" >
+            <Link to='/'>
+          <img  src= "./images/logo6.png" alt='' />
+          </Link>
+            {/* <a href="/" className="nav-link" >
                  HOME
-               </a>
+               </a> */}
 
                 <div className='container'>
        {currentUser ? (
@@ -101,6 +104,7 @@ function Usernav(props) {
   
 
     </main>
+
     );
 }
 

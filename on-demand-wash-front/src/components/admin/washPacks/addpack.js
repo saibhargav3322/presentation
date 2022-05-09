@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
-import Adminnav from '../adminnav'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Washnav from './washpacknav'
 
 function Addpack(props) {
 
@@ -51,7 +51,7 @@ function Addpack(props) {
         }
     return (
         <div>
-               <Adminnav></Adminnav>
+              <Washnav/>
                <h2>Add Pack Details</h2>
    <form onSubmit={(e)=>submit(e)} className='addform'>
                 <label>id: </label>

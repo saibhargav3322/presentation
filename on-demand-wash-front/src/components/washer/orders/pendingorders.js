@@ -1,8 +1,11 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios'
-import Washernav from '../washernav'
+import Ordernav from './ordersnav'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function Getorders(props) {
+
+function Pendingorders(props) {
 
     const [data,setData]= useState([])
 
@@ -40,11 +43,24 @@ function Getorders(props) {
 
                // console.log(a)
                  axios.get("http://localhost:9096/washer/acceptanorder/"+a).then(res=>{
-                     console.log(res.data);
+                     console.log(res.data)
+                     if(res.data==="Order has been canceled")
+                     {
+                        return ordercanceled();
+                     }
                  }).catch(err=>{
                      console.log(err)
                  })
-                 window.location.reload()
+                 setTimeout(function(){
+                    window.location.reload(1);
+                 }, 3000);
+             }
+
+             const ordercanceled=()=>{
+                 toast("Order has been canceled")
+                 setTimeout(function(){
+                    window.location.reload(1);
+                 }, 3000);
              }
 
              const completedby=(a)=>{
@@ -62,7 +78,13 @@ function Getorders(props) {
 
                 if(a==="pending")
                 {
-                    return <button style={style} className="btn btn-outline-primary btn-sm m-0 waves-effect" onClick={()=>acceptedby(b)}>accept</button>
+                    return(
+                        <React.Fragment>
+                        <button style={style} className="btn btn-outline-primary btn-sm m-0 waves-effect" onClick={()=>acceptedby(b)}>accept</button>
+                    <ToastContainer></ToastContainer>
+                    </React.Fragment>
+                    )
+                    
                 }
                 if(a.includes("accepted by"))
                 {
@@ -71,8 +93,8 @@ function Getorders(props) {
              }
     return (
         <div>
-        <Washernav></Washernav>
-<h1>Your orders</h1>
+        <Ordernav/>
+<h1>Orders</h1>
 
 <table class="table table-striped table-responsive-md btn-table">
 <thead className="thead-dark">
@@ -92,7 +114,14 @@ function Getorders(props) {
 <tbody>
 
 {
-    data.map(d=>(
+    data.filter(d=>{
+        if(d.status ==="pending")
+        {
+            return d;
+        }
+    })
+    
+    .map(d=>(
         <tr key={d.id}>
             <td>{d.customerUsername}</td>
             <td>{d.carModel}</td>
@@ -107,8 +136,9 @@ function Getorders(props) {
 }
 </tbody>
 </table>
+
 </div>
     );
 }
 
-export default Getorders;
+export default Pendingorders;

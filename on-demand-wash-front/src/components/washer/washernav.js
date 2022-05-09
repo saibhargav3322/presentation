@@ -18,10 +18,9 @@ function Usernav(props) {
     return (
         <div>
             <nav className='navbar navbar-expand navbar-light fixed-top'>
-              <h2>Washer Portal</h2>
-              <a href="/" className="nav-link" >
-                 HOME
-               </a>
+              <Link to='/'>
+          <img  src= "./images/logo6.png" alt='' />
+          </Link>
                 <div className='container'>
        {currentUser ? (
            <div className="navbar-nav ms-auto">
@@ -30,8 +29,13 @@ function Usernav(props) {
                  Washerhome
                </Link>
              </li>
-             <li className="nav-item">
+             {/* <li className="nav-item">
                <Link to={"/washerorders"} className="nav-link">
+                 Orders
+               </Link>
+             </li> */}
+               <li className="nav-item">
+               <Link to={"/washerordernav"} className="nav-link">
                  Orders
                </Link>
              </li>

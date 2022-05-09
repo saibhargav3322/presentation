@@ -29,7 +29,8 @@ function Navbar() {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-          <img  src= "./images/logo.png" alt='' />
+            {/* <h2>Clean Car Wash</h2> */}
+          <img  src= "./images/logo6.png" alt='' />
 
             
 
@@ -66,7 +67,7 @@ function Navbar() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/washernav'
+                to='/washerhome'
                 className='nav-links'
 
               >

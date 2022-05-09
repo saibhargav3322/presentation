@@ -63,6 +63,33 @@ function Getorders(props) {
               }
              }
 
+             const cancle=(a)=>{
+              const url="http://localhost:9095/user/cancelorder/"+a
+               axios.delete(url).then(res=>{
+                 console.log(res.data)
+               }).catch(err=>{
+                 console.log(err)
+               })
+
+               toast("Order Canceled")
+               setTimeout(function(){
+                window.location.reload(1);
+             }, 3000);
+             }
+
+             const cancleorder=(a,b)=>{
+
+              if(b=="pending")
+              {
+                return(
+                <React.Fragment>
+                <button onClick={()=>{cancle(a)}} className="btn btn-outline-primary btn-sm m-0 waves-effect" >Cancel</button>
+                <ToastContainer />
+                </React.Fragment>
+                )
+              }
+             }
+
 
 
     return (
@@ -83,6 +110,7 @@ function Getorders(props) {
               <th>date</th>
               <th>payment</th>
               <th>washpack</th>
+              <th>Cancle Order</th>
               <th>rating</th>
             </tr>
             {/* </MDBTableHead> */}
@@ -101,6 +129,7 @@ function Getorders(props) {
                           <td>{d.date}</td>
                           <td>{d.payment}</td>
                           <td>{d.washpack.id}</td>
+                          <td>{cancleorder(d.id,d.status)}</td>
                           {/* {
                             if(d.status === "completed")
                             {

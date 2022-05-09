@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './usernav'
 import '../Home/services.css'
 import { useNavigate } from 'react-router-dom';
-
+import Orders from './getorders/Getorders'
 function Userhome(props) {
 
     const navigate=useNavigate();
@@ -11,7 +11,7 @@ function Userhome(props) {
         <div>
             <Navbar/>
             <br></br>
-    <div className="space">
+    {/* <div className="space">
           <div class='flip-card'>
             <div className='flip-card-inner'>
               <div class='flip-card-front'>
@@ -94,8 +94,8 @@ function Userhome(props) {
                 <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now</button></div>
             </div>
           </div>
-        </div>
-        </div>
+        </div>*/}
+        </div> 
     );
 }
 

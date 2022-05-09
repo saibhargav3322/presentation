@@ -47,25 +47,29 @@ function Addorder(props) {
             axios.post(url,null,{params:{carbrand,carmodel,date,housenumber,streetname,landmark,packid,payment}} )
                 .then(res=>{
                     console.log(res.data);
-                    
-                    navigate("/userhome",2000)
+                    notify();
+                    window.location.href="http://localhost:4000";
+                    navigate("/userhome",3000)
                 },
                ).catch(err => {
                    if(err.response.status === 403)
                    {
 
                 // setError("please login")
-                toast("Your Order added successfully")
+                notify403()
                    }
                    if(err.response.status === 400)
                    {
 
                 // setError("please enter all details")
-                toast("Your Order added successfully")
+                notify400()
                    }
             })
 
         }
+
+        const notify400=()=>{toast("Please fill all contents")}
+        const notify403=()=>{toast("Please Login")}
 
         const notify=()=>{toast("Your Order added successfully")}
 
@@ -98,7 +102,7 @@ function Addorder(props) {
                 {/* <label>payment: </label>
                 <input onChange={(e)=>handle(e)}  id="payment" value={data.payment} placeholder='payment' type="text"/><br/><br/> */}
 
-                <button onClick={()=>notify()}>submit</button>
+                <button >Add Order</button>
  
             </form>
             <ToastContainer></ToastContainer>

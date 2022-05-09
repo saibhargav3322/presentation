@@ -1,11 +1,20 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
-import Adminnav from '../adminnav'
+import Washnav from './washpacknav'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Washpacks(props) {
     const [data,setData]=useState([])
+    const [pack,setPack]=useState({})
+    const [status,setStatus]=useState()
+    const[packdata,setPackdata]=useState({
+
+        id:"",
+        cost:"",
+        name:"",
+        description:""
+    })
 
     axios.interceptors.request.use(
         config => {
@@ -17,6 +26,77 @@ function Washpacks(props) {
         });
 
         const url="http://localhost:9094/admin/allpacks"
+        const baseurl="http://localhost:9098/washerPack/getpack/"
+        const packurl="http://localhost:9098/washerPack/updatepack"
+
+        function getpack(a){
+            axios.get(baseurl+a).then(res=>{
+                
+                setPack(res.data);
+                console.log(pack)
+            }).catch(err=>{
+                console.log(err)
+            })
+        }
+
+        const update=(a)=>{
+
+            getpack(a);
+            setStatus(1)
+        }
+
+        const table=()=>{
+            if(status)
+            {
+                return(
+                    <>
+                    <h2>Enter Details to Update</h2>
+                    <form onSubmit={submitpack} className='addform'>
+                <label>id: </label>
+                <input onChange={(e)=>handle(e)} id="id" value={pack.id} placeholder='id' type="number"  /><br/><br/>
+                <label>name: </label>
+                <input onChange={(e)=>handle(e)} id="name" value={pack.name} placeholder='name' type="text"/><br/><br/>
+                <label>cost: </label>
+                <input onChange={(e)=>handle(e)} id="cost" value={pack.cost} placeholder='cost' type="number"/><br/><br/>
+                <label>Description: </label>
+                <input onChange={(e)=>handle(e)} id="description" value={pack.description} placeholder='description' type="text"/><br/><br/>
+
+                <button >submit</button>
+                <ToastContainer></ToastContainer>
+                </form>
+                    </>
+                 )
+            }
+            else{
+                return null;
+            }
+        }
+
+        const submitpack=(e)=>{
+
+            e.preventDefault();
+           const id=pack.id;
+           const name=pack.name;
+           const description=pack.description;
+           const cost=pack.cost;
+           console.log(pack.id)
+           console.log(pack.name)
+           console.log(pack.description)
+           console.log(pack.cost)
+           console.log(id)
+           console.log(name)
+           console.log(description)
+           console.log(cost)
+            axios.put(packurl,null,{params:{id,name,description,cost}}).then(res=>{
+                console.log(res.data)
+            })
+
+            toast("Pack updated successfully!")
+            setTimeout(function(){
+                window.location.reload(1);
+             }, 3000);
+        }
+
 
         function get(){
 
@@ -50,9 +130,15 @@ function Washpacks(props) {
                     window.location.reload(1);
                  }, 3000);
              }
+
+             function handle(e){
+                const newdata={...pack}
+                newdata[e.target.id]=e.target.value
+                setPack(newdata)
+            }
     return (
 <div>
-    <Adminnav></Adminnav>
+<Washnav/>
  
 <h1>All Packs</h1>
 {/* <p>Enter washer username to search:   <input type="text" placeholder="username" onChange={e=>setWasherUsername(e.target.value)} className='reservatioinsearch' />
@@ -66,6 +152,8 @@ function Washpacks(props) {
 <th>title</th>
 <th>Description</th>
 <th>cost</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
@@ -78,6 +166,7 @@ function Washpacks(props) {
             <td>{d.name}</td>
             <td>{d.description}</td>
             <td>{d.cost}</td>
+            <td><button onClick={()=>update(d.id)}>Update</button></td>
             <td><button onClick={()=>deletepack(d.id)}>Delete</button></td>
         </tr>
     ))
@@ -85,6 +174,8 @@ function Washpacks(props) {
 </tbody>
 </table>
 <ToastContainer></ToastContainer>
+
+{table()}
 </div>
     );
 }

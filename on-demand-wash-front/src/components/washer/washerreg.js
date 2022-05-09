@@ -52,7 +52,7 @@ function Register() {
         <React.Fragment>
         <Washernav></Washernav>
       <form className='register' onSubmit={handleSubmit}>
-      <img src='./images/regpic.jpg' className='regimage'></img>
+      <img src='./images/regpic.jpg' className='regimage' alt='blank'></img>
           <h2 className='signup'>Sign up</h2>
           <div className="form-group">
             <label>name</label>
@@ -71,8 +71,16 @@ function Register() {
         </div>
         <div className="form-group">
             <label>location</label>
-            <input type="text" className="form-control" placeholder="location" 
-            onChange={e=>handle(e)} id="location" value={data.location}/>
+            {/* <input type="text" className="form-control" placeholder="location" 
+            onChange={e=>handle(e)} id="location" value={data.location}/> */}
+            <select id="location" className="form-control" onChange={e=>handle(e)} value={data.location}>
+  <option value="Hyderabad">Hyderabad</option>
+  <option value="Rajahmundary">Rajahmundary</option>
+  <option value="Kakinada">Kakinada</option>
+  <option value="Eluru">Eluru</option>
+  <option value="Vijayawada">Vijayawada</option>
+  <option value="Vizag">Vizag</option>
+</select>
         </div>
         <div className="form-group">
             <label>username</label>

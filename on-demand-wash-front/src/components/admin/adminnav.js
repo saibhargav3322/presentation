@@ -18,10 +18,9 @@ function Usernav(props) {
     return (
         <div>
             <nav className='navbar navbar-expand navbar-light fixed-top'>
-            <h2>Admin Portal</h2>
-              <a href="/" className="nav-link" >
-                 HOME
-               </a>
+            <Link to='/'>
+          <img  src= "./images/logo6.png" alt='' />
+          </Link>
                 <div className='container'>
        {currentUser ? (
            <div className="navbar-nav ms-auto">
@@ -35,7 +34,7 @@ function Usernav(props) {
                  AllRatings
                </a>
              </li>
-             <li className="nav-item">
+             {/* <li className="nav-item">
                <a href="/adminpacks" className="nav-link" >
                  AllPacks
                </a>
@@ -44,9 +43,15 @@ function Usernav(props) {
                <a href="/adminaddpacks" className="nav-link" >
                  AddPack
                </a>
-             </li>
+             </li> */}
              <li className="nav-item">
-               <a href="/adminorders" className="nav-link" >
+               <a href="/adminpacksnav" className="nav-link" >
+                 WashPacks
+               </a>
+             </li>
+
+             <li className="nav-item">
+               <a href="/adminordersnav" className="nav-link" >
                  AllOrders
                </a>
              </li>

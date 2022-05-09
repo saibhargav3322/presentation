@@ -155,6 +155,48 @@ return d
 }
 </tbody>
 </table>
+
+<br/><br/>
+<h2>All Canceled Orders</h2>
+
+<table class="table table-striped table-responsive-md btn-table">
+
+<thead className="thead-dark">
+    <tr>
+        <th>CustomerUserName</th>
+        <th>WasherUserName</th>
+        <th>date</th>
+        <th>Location</th>
+        <th>Status</th>
+        <th>CarBrand</th>
+        <th>CarModel</th>
+        <th>WashPack Id</th>
+        <th>Payment</th>
+    </tr>
+</thead>
+<tbody>
+{
+data.filter((d)=>{
+if(d.status.includes("cancled")){
+return d
+}
+}).map(d=>(
+<tr key={d.id}>
+<td>{d.customerUsername}</td>
+<td>{d.washerUsername}</td>
+<td>{d.date}</td>
+<td>{d.address.city}</td>
+<td>{d.status}</td>
+<td>{d.carBrand}</td>
+<td>{d.carModel}</td>
+<td>{d.washpack.id}</td>
+<td>{d.payment}</td>
+
+</tr>
+))
+}
+</tbody>
+</table>
        
         </div>
 

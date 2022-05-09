@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 import Navbar from '../usernav'
 import { useNavigate } from 'react-router-dom';
+import '../register.css'
 
 function Profile(props) {
 
@@ -119,8 +120,8 @@ function Profile(props) {
     return (
         <div>
             <Navbar/>
-            <form onSubmit={handleSubmit}>
-          <h3>Update Details</h3>
+            <form className='register' onSubmit={handleSubmit}>
+          <h2 className='signup'>Update Details</h2>
           <div className="form-group">
             <label>name</label>
             <input type="text" className="form-control" placeholder="Name" 
