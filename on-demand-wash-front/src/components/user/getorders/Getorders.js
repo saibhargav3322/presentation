@@ -40,7 +40,7 @@ function Getorders(props) {
             const parameters=(a,b,c)=>{
 
             //  rating.setdata(a,b,c);
-            toast("thanks for rarings!");
+            toast("Thanks for ratings😊!");
              setMsg(rating.postmethod(a,b,c));
 
              
@@ -53,10 +53,10 @@ function Getorders(props) {
               {
                 return(
                   <React.Fragment>
-                  <button onClick={()=>{parameters("worst",0,b)}} className="btn btn-outline-primary btn-sm m-0 waves-effect" >worst</button>
-                  <button onClick={()=>{parameters("average",4,b)}} className="btn btn-outline-primary btn-sm m-0 waves-effect">average</button>
-                  <button onClick={()=>{parameters("good",7,b)}} className="btn btn-outline-primary btn-sm m-0 waves-effect">good</button>
-                  <button onClick={()=>{parameters("best",10,b)}} className="btn btn-outline-primary btn-sm m-0 waves-effect">best</button>
+                  <button onClick={()=>{parameters("Worst",0,b)}} className="btn btn-outline-primary btn-sm m-0 waves-effect" style={{backgroundColor:'red', color:'white',margin:'0px'}}>worst</button>
+                  <button onClick={()=>{parameters("Average",4,b)}} className="btn btn-outline-primary btn-sm m-0 waves-effect" style={{backgroundColor:'skyblue', color:'white',margin:'10px'}}>average</button>
+                  <button onClick={()=>{parameters("Good",7,b)}} className="btn btn-outline-primary btn-sm m-0 waves-effect" style={{backgroundColor:'orange', color:'white',margin:'10px'}}>good</button>
+                  <button onClick={()=>{parameters("Best",10,b)}} className="btn btn-outline-primary btn-sm m-0 waves-effect" style={{backgroundColor:'green', color:'white',margin:'10px'}}>best</button>
                   <ToastContainer />
                   </React.Fragment>
                 )
@@ -82,10 +82,10 @@ function Getorders(props) {
               if(b=="pending")
               {
                 return(
-                <React.Fragment>
-                <button onClick={()=>{cancle(a)}} className="btn btn-outline-primary btn-sm m-0 waves-effect" >Cancel</button>
-                <ToastContainer />
-                </React.Fragment>
+                  <React.Fragment>
+                  <button onClick={()=>{cancle(a)}} className="btn btn-outline-primary btn-sm m-0 waves-effect" style={{backgroundColor:'red', color:'white'}}>Cancel</button>
+                  <ToastContainer />
+                  </React.Fragment>
                 )
               }
              }
@@ -95,23 +95,24 @@ function Getorders(props) {
     return (
         <div>
                       <Navbar/>
-            <h1>Your orders</h1>
+                      <br/>
+            <h1>Your Orders</h1>
 
             {/* {msg && <p>{msg}</p>} */}
             {/* <MDBTable bordered borderColor="primary" > */}
-            <table class="table table-striped table-responsive-md btn-table">
+            <table class="table table-striped table-responsive-md btn-table" style={{margin:"50px 50px 0px 150px",width:"1300px",border:"2px solid skyblue",borderRadius:'5px'}}>
             <thead>
             <tr>
 
-              <th>name</th>
-              <th>washername</th>
-              <th>carname</th>
-              <th>status</th>
-              <th>date</th>
-              <th>payment</th>
-              <th>washpack</th>
-              <th>Cancle Order</th>
-              <th>rating</th>
+              <th>Name</th>
+              <th>WasherName</th>
+              <th>CarName</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Payment</th>
+              <th>WashPack</th>
+              <th>CancelOrder</th>
+              <th>Rating</th>
             </tr>
             {/* </MDBTableHead> */}
             </thead>

@@ -110,7 +110,7 @@ function Profile(props) {
                     {
                         console.log(res.data)
                         localStorage.removeItem('token')
-                        navigate("/")
+                        setTimeout(() => navigate('/'), 1000)
                     }).catch(
                         err=>{
                             console.log(err)
@@ -123,27 +123,27 @@ function Profile(props) {
             <form className='register' onSubmit={handleSubmit}>
           <h2 className='signup'>Update Details</h2>
           <div className="form-group">
-            <label>name</label>
+            <label>Name</label>
             <input type="text" className="form-control" placeholder="Name" 
                 onChange={e=>handle(e)} id="name" value={data.name}/>
           </div>
         <div className="form-group">
-            <label>gmail</label>
+            <label>Gmail</label>
             <input type="email" className="form-control" placeholder="Email" 
                  onChange={e=>handle(e)} id="gmail" value={data.gmail}/>
         </div>
         <div className="form-group">
-            <label>password</label>
+            <label>Password</label>
             <input type="password" className="form-control" placeholder="password" 
             onChange={e=>handle(e)} id="password" value={data.password}/>
         </div>
         <div className="form-group">
-            <label>location</label>
+            <label>Location</label>
             <input type="text" className="form-control" placeholder="location" 
             onChange={e=>handle(e)} id="location" value={data.location}/>
         </div>
         <div className="form-group">
-            <label>username</label>
+            <label>UserName</label>
             <input type="text" className="form-control" placeholder="username" 
             onChange={e=>handle(e)} id="username" value={data.username}/>
         </div>
@@ -153,7 +153,7 @@ function Profile(props) {
         </div>
         
       </form>
-
+<br/>
       <h3>Delete your account?</h3>
 
       <div className='form-group'>

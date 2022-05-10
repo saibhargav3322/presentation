@@ -1,0 +1,14 @@
+.packdata{
+    text-align: left;
+    padding: 20px;
+    margin: 50px;
+    display: inline-block;
+    box-sizing: border-box;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.25);
+    border: 1px solid #888;
+    border-radius: 10px;
+    background-color: skyblue;
+    color: black;
+    width: 300px;
+    height: 270px;
+}

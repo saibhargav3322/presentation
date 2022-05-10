@@ -119,8 +119,10 @@ function Profile(props) {
     return (
         <div>
             <Navbar/>
+            <br/>
             <form className='register' onSubmit={handleSubmit}>
           <h2 className='signin'>Update Details</h2>
+          <br/>
           <div className="form-group">
             <label>name</label>
             <input type="text" className="form-control" placeholder="Name" 
@@ -153,6 +155,7 @@ function Profile(props) {
         
       </form>
 
+<br/>
       <h3>Delete your account?</h3>
 
       <div className='form-group'>

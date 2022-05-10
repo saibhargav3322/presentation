@@ -3,6 +3,7 @@ import axios from 'axios';
 import Washnav from './washpacknav'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './washpack.css'
 
 function Washpacks(props) {
     const [data,setData]=useState([])
@@ -50,18 +51,26 @@ function Washpacks(props) {
             {
                 return(
                     <>
+                    <br/><br/>
                     <h2>Enter Details to Update</h2>
-                    <form onSubmit={submitpack} className='addform'>
-                <label>id: </label>
-                <input onChange={(e)=>handle(e)} id="id" value={pack.id} placeholder='id' type="number"  /><br/><br/>
-                <label>name: </label>
-                <input onChange={(e)=>handle(e)} id="name" value={pack.name} placeholder='name' type="text"/><br/><br/>
-                <label>cost: </label>
-                <input onChange={(e)=>handle(e)} id="cost" value={pack.cost} placeholder='cost' type="number"/><br/><br/>
+                    <form onSubmit={submitpack} className='register'>
+                        <div className='form-group'>
+                <label>Id: </label>
+                <input onChange={(e)=>handle(e)} id="id" value={pack.id} placeholder='id' type="number" className='form-control' />
+                </div>
+                <div className='form-group'>
+                <label>Name: </label>
+                <input onChange={(e)=>handle(e)} id="name" value={pack.name} placeholder='name' type="text" className='form-control'/>
+               </div>
+               <div className='form-group'>
+                <label>Cost: </label>
+                <input onChange={(e)=>handle(e)} id="cost" value={pack.cost} placeholder='cost' type="number" className='form-control'/>
+               </div>
+               <div className='form-group'>
                 <label>Description: </label>
-                <input onChange={(e)=>handle(e)} id="description" value={pack.description} placeholder='description' type="text"/><br/><br/>
-
-                <button >submit</button>
+                <input onChange={(e)=>handle(e)} id="description" value={pack.description} placeholder='description' type="text" className='form-control'/>
+                </div>
+                <button  className='btn btn-primary btn-block'>Update</button>
                 <ToastContainer></ToastContainer>
                 </form>
                     </>
@@ -139,19 +148,19 @@ function Washpacks(props) {
     return (
 <div>
 <Washnav/>
- 
+ <br/>
 <h1>All Packs</h1>
 {/* <p>Enter washer username to search:   <input type="text" placeholder="username" onChange={e=>setWasherUsername(e.target.value)} className='reservatioinsearch' />
 
 </p> */}
-<table class="table table-striped table-responsive-md btn-table">
+<table class="table table-striped table-responsive-md btn-table" style={{margin:"50px 50px 0px 190px",width:"1200px",border:"2px solid skyblue",borderRadius:'5px'}}>
 <thead className="thead-dark">
 <tr>
 
 <th>Id</th>
-<th>title</th>
+<th>Title</th>
 <th>Description</th>
-<th>cost</th>
+<th>Cost</th>
 <th></th>
 <th></th>
 </tr>
@@ -166,14 +175,29 @@ function Washpacks(props) {
             <td>{d.name}</td>
             <td>{d.description}</td>
             <td>{d.cost}</td>
-            <td><button onClick={()=>update(d.id)}>Update</button></td>
-            <td><button onClick={()=>deletepack(d.id)}>Delete</button></td>
+            <td><button onClick={()=>update(d.id)}  className="btn btn-outline-primary btn-sm m-0 waves-effect" style={{backgroundColor:'skyblue', color:'white'}}>Update</button></td>
+            <td><button onClick={()=>deletepack(d.id)}  className="btn btn-outline-primary btn-sm m-0 waves-effect" style={{backgroundColor:'red', color:'white'}}>Delete</button></td>
         </tr>
     ))
 }
 </tbody>
 </table>
 <ToastContainer></ToastContainer>
+
+{/* {
+   data.map(d=>(
+        <div className='packdata'>
+
+            <p>id:{d.id}</p>
+            <p>name:{d.name}</p>
+            <p>description:{d.description}</p>
+            <p>cost:{d.cost}</p>
+            <button onClick={()=>update(d.id)}>Update</button>
+            <button onClick={()=>deletepack(d.id)}>Delete</button>
+        </div>
+    ))
+} */}
+
 
 {table()}
 </div>

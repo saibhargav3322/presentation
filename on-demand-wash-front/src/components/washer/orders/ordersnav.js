@@ -17,7 +17,7 @@ function Wordersnav(props) {
              </li>
              <li className="nav-item">
                <a href="/washerorderpending" className="nav-link" >
-                 PendingOrders
+                 AvailableOrders
                </a>
              </li>
              <li className="nav-item">

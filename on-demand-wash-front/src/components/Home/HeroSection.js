@@ -8,9 +8,14 @@ function HeroSection() {
     <div className='hero-container'>
       <video src='/videos/dust.mp4' autoPlay loop muted />
       <h2>Giving your car</h2>
-      <h1>THE BEST CLEANING</h1>
+      <h1 >THE BEST CLEANING</h1>
       <h2>IT EVER HAD</h2>
-      <p>Book today, wash your vechicle as often as you want.</p>
+      <marquee  behavior='scroll'
+    scrollamount='20'
+    width='50%'
+    direction='right'
+    height='50px'
+    > <h2 style={{color:"orangered"}}>Book today, wash your vechicle as often as you want</h2></marquee>
       <div className='hero-btns'>
       
         <Button

@@ -27,7 +27,7 @@ const Services = () => {
                 <p>Soft Cloth Tunnel Wash</p>
                 <p> Spot Free Rinse </p>
                 <p> Turbo Air Dry</p>
-                <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now </button></div>
+                <button className="pack" onClick={() => { navigate('/userhome') }}>Book Now </button></div>
             </div>
             
           </div>
@@ -46,7 +46,7 @@ const Services = () => {
                 <p> In-Tunnel Wheel Cleaner</p>
                 <p>Triple Foam Wax</p>
                 <p>Clear Coat Conditioner</p>
-                <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now</button></div>
+                <button className="pack" onClick={() => { navigate('/userhome') }}>Book Now</button></div>
             </div>
           </div>
 
@@ -64,7 +64,7 @@ const Services = () => {
                 <p>The Super Wash plus…</p>
                 <p>In-Tunnel Tire Shine</p>
                 <p>Underbody Wash</p>
-                <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now</button></div>
+                <button className="pack" onClick={() => { navigate('/userhome') }}>Book Now</button></div>
             </div>
           </div>
 
@@ -80,7 +80,7 @@ const Services = () => {
                 <p>The Super Wash plus…</p>
                 <p>In-Tunnel Tire Shine</p>
                 <p>Underbody Wash</p>
-                <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now</button></div>
+                <button className="pack" onClick={() => { navigate('/userhome') }}>Book Now</button></div>
             </div>
           </div>
 
@@ -99,7 +99,7 @@ const Services = () => {
                 <p>Triple Foam Wax</p>
                 <p>Wheels Finished by Hand</p>
                 <p>Tire Shine by Hand</p>
-                <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now</button></div>
+                <button className="pack" onClick={() => { navigate('/userhome') }}>Book Now</button></div>
             </div>
           </div>
 
@@ -118,7 +118,7 @@ const Services = () => {
                 <p>Triple Foam Wax</p>
                 <p>Wheels Finished by Hand</p>
                 <p>Tire Shine by Hand</p>
-                <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now</button></div>
+                <button className="pack" onClick={() => { navigate('/userhome') }}>Book Now</button></div>
             </div>
           </div>
 
@@ -137,7 +137,7 @@ const Services = () => {
                 <p>Triple Foam Wax</p>
                 <p>Wheels Finished by Hand</p>
                 <p>Tire Shine by Hand</p>
-                <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now</button></div>
+                <button className="pack" onClick={() => { navigate('/userhome') }}>Book Now</button></div>
             </div>
           </div>
 
@@ -156,7 +156,7 @@ const Services = () => {
                 <p>Triple Foam Wax</p>
                 <p>Wheels Finished by Hand</p>
                 <p>Tire Shine by Hand</p>
-                <button className="pack" onClick={() => { navigate('/addorder') }}>Book Now</button></div>
+                <button className="pack" onClick={() => { navigate('/userhome') }}>Book Now</button></div>
             </div>
           </div>
         </div>

@@ -9,10 +9,6 @@ function Getorders(props) {
 
     const [data,setData]= useState([])
 
-    const style={
-        backgroundColor:"green"
-    }
-
     axios.interceptors.request.use(
         config => {
         config.headers.authorization = "Bearer " + localStorage.getItem("washertoken");
@@ -44,17 +40,22 @@ function Getorders(props) {
                // console.log(a)
                  axios.get("http://localhost:9096/washer/acceptanorder/"+a).then(res=>{
                      console.log(res.data)
+
                      if(res.data==="Order has been canceled")
                      {
                         return ordercanceled();
                      }
+
                  }).catch(err=>{
                      console.log(err)
                  })
-                 setTimeout(function(){
-                    window.location.reload(1);
-                 }, 3000);
              }
+
+             const notify=()=>{                toast("Order Completed!")
+             setTimeout(function(){
+                window.location.reload(1);
+             }, 3000);}
+             
 
              const ordercanceled=()=>{
                  toast("Order has been canceled")
@@ -66,11 +67,12 @@ function Getorders(props) {
              const completedby=(a)=>{
                 axios.get("http://localhost:9096/washer/completeanorder/"+a).then(res=>{
                     console.log(res.data);
+                    notify();
                 }).catch(err=>{
                     console.log(err)
                     
                 })
-                window.location.reload()
+                // window.location.reload()
             }
 
 
@@ -80,7 +82,7 @@ function Getorders(props) {
                 {
                     return(
                         <React.Fragment>
-                        <button style={style} className="btn btn-outline-primary btn-sm m-0 waves-effect" onClick={()=>acceptedby(b)}>accept</button>
+                        <button onClick={()=>acceptedby(b)} className="btn btn-outline-primary btn-sm m-0 waves-effect" style={{backgroundColor:'green', color:'white'}} >accept</button>
                     <ToastContainer></ToastContainer>
                     </React.Fragment>
                     )
@@ -88,27 +90,27 @@ function Getorders(props) {
                 }
                 if(a.includes("accepted by"))
                 {
-                    return <button style={style} className="btn btn-outline-primary btn-sm m-0 waves-effect" onClick={()=>completedby(b)}>complete</button>
+                    return <button className="btn btn-outline-primary btn-sm m-0 waves-effect" style={{backgroundColor:'green', color:'white'}} onClick={()=>completedby(b)}>complete</button>
                 }
              }
     return (
         <div>
  <Ordernav/>
+<br/>
+<h1>Accepted Orders</h1>
 
-<h1>Your Pending Orders</h1>
-
-<table class="table table-striped table-responsive-md btn-table">
+<table class="table table-striped table-responsive-md btn-table" style={{margin:"50px 50px 0px 200px",width:"1100px",border:"2px solid skyblue",borderRadius:'5px'}}>
 <thead className="thead-dark">
 <tr>
 
 
 <th>CustomerName</th>
-<th>carname</th>
-<th>status</th>
-<th>date</th>
-<th>payment</th>
-<th>washpack id</th>
-<th>washpack name</th>
+<th>Carname</th>
+<th>Status</th>
+<th>Date</th>
+<th>Payment</th>
+<th>Washpack id</th>
+<th>Washpack name</th>
 <th></th>
 </tr>
 </thead>
@@ -128,13 +130,13 @@ function Getorders(props) {
             <td>{d.payment}</td>
             <td>{d.washpack.id}</td>
             <td>{d.washpack.name}</td>
-            {statuscheck(d.status,d.id)}
+            <td>{statuscheck(d.status,d.id)}</td>
         </tr>
     ))
 }
 </tbody>
 </table>
-
+<ToastContainer></ToastContainer>
 </div>
     );
 }

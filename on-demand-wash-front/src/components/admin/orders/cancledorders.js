@@ -33,15 +33,15 @@ function Orders(props) {
     return (
         <div>
             <Ordernav></Ordernav>
-<h2>All Canceled Orders</h2>
-
-<table class="table table-striped table-responsive-md btn-table">
+            <br/>
+<h2>All Cancelled Orders</h2>
+<table class="table table-striped table-responsive-md btn-table" style={{margin:"50px 50px 0px 190px",width:"1200px",border:"2px solid skyblue",borderRadius:'5px'}}>
 
 <thead className="thead-dark">
     <tr>
         <th>CustomerUserName</th>
         <th>WasherUserName</th>
-        <th>date</th>
+        <th>Date</th>
         <th>Location</th>
         <th>Status</th>
         <th>CarBrand</th>
@@ -53,7 +53,7 @@ function Orders(props) {
 <tbody>
 {
 data.filter((d)=>{
-if(d.status.includes("cancled")){
+if(d.status.includes("cancelled")){
 return d
 }
 }).map(d=>(

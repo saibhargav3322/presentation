@@ -32,7 +32,7 @@ function Ordersnav(props) {
              </li>
              <li className="nav-item">
                <a href="/admincancled" className="nav-link" >
-               CancledOrders
+               CancelledOrders
                </a>
                </li>
             

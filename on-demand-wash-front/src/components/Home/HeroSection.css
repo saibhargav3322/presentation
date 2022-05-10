@@ -27,8 +27,8 @@ video {
 }
 
 .hero-container > h1 {
-  color: rgb(0, 214, 54);
-  font-size: 60px;
+color: green;
+font-size: 60px;
   display: flex;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
   'Lucida Sans', Arial, sans-serif;

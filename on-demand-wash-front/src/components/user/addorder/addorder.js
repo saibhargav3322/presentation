@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
 import axios from 'axios';
-import './addorder.css';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../usernav'
 import { ToastContainer, toast } from 'react-toastify';
@@ -81,28 +80,44 @@ function Addorder(props) {
     return (
         <React.Fragment> 
             <Navbar/>
-        <h1>Enter Order Details</h1>
+            <br/>
+        <h1 className='signup'>Order Details</h1>
+        <br/>
         <div  > 
             {/* {error && <div>{error}</div>} */}
-            <form onSubmit={(e)=>submit(e)} className='addform'>
-                <label>carbrand: </label>
-                <input onChange={(e)=>handle(e)} id="carbrand" value={data.carbrand} placeholder='carbrand' type="text"  /><br/><br/>
-                <label>carmodel: </label>
-                <input onChange={(e)=>handle(e)} id="carmodel" value={data.carmodel} placeholder='carmodel' type="text"/><br/><br/>
-                <label>date: </label>
-                <input onChange={(e)=>handle(e)} id="date" value={data.date} placeholder='date' type="date"/><br/><br/>
-                <label>housenumber: </label>
-                <input onChange={(e)=>handle(e)} id="housenumber" value={data.housenumber} placeholder='housenumber' type="text"/><br/><br/>
-                <label>landmark: </label>
-                <input onChange={(e)=>handle(e)} id="landmark" value={data.landmark} placeholder='landmark' type="text"/><br/><br/>
-                <label>streetname: </label>
-                <input onChange={(e)=>handle(e)} id="streetname" value={data.streetname} placeholder='streetname' type="text"/><br/><br/>
-                <label>packid: </label>
-                <input onChange={(e)=>handle(e)} id="packid" value={data.packid} placeholder='packid' type="number"/><br/><br/>
+            <form onSubmit={(e)=>submit(e)} className='register'>
+                <div className='form-group'>
+                <label>Carbrand </label>
+                <input onChange={(e)=>handle(e)} id="carbrand" value={data.carbrand} placeholder='carbrand' type="text" className='form-control' />
+                </div>
+                <div className='form-group'>
+                <label>Carmodel </label>
+                <input onChange={(e)=>handle(e)} id="carmodel" value={data.carmodel} placeholder='carmodel' type="text" className='form-control'/>
+                </div>
+                <div className='form-group'>
+                <label>Date </label>
+                <input onChange={(e)=>handle(e)} id="date" value={data.date} placeholder='date' type="date" className='form-control'/>
+                </div>
+                <div className='form-group'>
+                <label>H.No </label>
+                <input onChange={(e)=>handle(e)} id="housenumber" value={data.housenumber} placeholder='housenumber' type="text" className='form-control'/>
+                </div>
+                <div className='form-group'>
+                <label>Landmark </label>
+                <input onChange={(e)=>handle(e)} id="landmark" value={data.landmark} placeholder='landmark' type="text" className='form-control'/>
+                </div>
+                <div className='form-group'>
+                <label>Streetname </label>
+                <input onChange={(e)=>handle(e)} id="streetname" value={data.streetname} placeholder='streetname' type="text" className='form-control'/>
+                </div>
+                <div className='form-group'>
+                <label>Packid </label>
+                <input onChange={(e)=>handle(e)} id="packid" value={data.packid} placeholder='packid' type="number" className='form-control'/>
+                </div>
                 {/* <label>payment: </label>
                 <input onChange={(e)=>handle(e)}  id="payment" value={data.payment} placeholder='payment' type="text"/><br/><br/> */}
 
-                <button >Add Order</button>
+                <button className='btn btn-primary btn-block'>Add Order</button>
  
             </form>
             <ToastContainer></ToastContainer>

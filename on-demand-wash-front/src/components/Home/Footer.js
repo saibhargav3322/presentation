@@ -14,22 +14,22 @@ function Footer() {
           <div class='footer-link-items'>
             <h2>Contact Us</h2>
             <p>Contact</p>
-            <p>+91 9898976790</p>
+            <p>+91 0063098366</p>
 
             <p>Support</p>
-            <p>AutoCar@outlook.com</p>
+            <p>CleanCarWash@outlook.com</p>
           </div>
         </div>
         <div className='footer-link-wrapper'>
           <div class='footer-link-items'>
             <h2>Social Media</h2>
-            <Link to='/'>Instagram</Link>
+            <Link to='/'>Instagram </Link>
             <Link to='/'>Facebook</Link>
             <Link to='/'>Youtube</Link>
           </div>
         </div>
       </div>
-     <p className='copy'> ©copyrights| Designed by Nithin Sarvade </p>
+     <p className='copy'> ©copyrights|Sai Bhargav</p>
     </div>
   );
 }

@@ -33,7 +33,7 @@ function Register() {
             res => {
                 console.log(res.data)
                 susstost()
-                setTimeout(() => navigate('/userlogin'), 2000)
+                setTimeout(() => navigate('/userlogin'), 900)
             }
         ).catch(
             err => {

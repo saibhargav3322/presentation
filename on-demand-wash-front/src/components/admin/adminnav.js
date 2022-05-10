@@ -66,7 +66,7 @@ function Usernav(props) {
                </a>
              </li>
              <li className="nav-item">
-               <a href="/" className="nav-link" onClick={logOut}>
+               <a href="/" className="nav-link" onClick={logOut} >
                  Logout
                </a>
              </li>

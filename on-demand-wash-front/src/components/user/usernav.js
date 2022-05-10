@@ -2,6 +2,7 @@ import React, { Component,useState,useEffect } from "react";
 import {Link, useNavigate} from "react-router-dom";
 import Login from './login'
 import '../Home/Navbar.css'
+import './usernav.css'
 
 
 function Usernav(props) {
@@ -35,7 +36,7 @@ function Usernav(props) {
            <div className="navbar-nav ms-auto">   
              <li className="nav-item">
                <a href="/userhome" className="nav-link" >
-                 userhome
+                 UserHome
                </a>
              </li>
 
@@ -57,7 +58,7 @@ function Usernav(props) {
                </a>
              </li>
              <li className="nav-item">
-               <a href="/" className="nav-link" onClick={logOut}>
+               <a href="/" className="nav-link" onClick={logOut} >
                  Logout
                </a>
              </li>
@@ -73,7 +74,7 @@ function Usernav(props) {
 
 <li className="nav-item">
                <a href="/userhome" className="nav-link" >
-                 userhome
+                 UserHome
                </a>
              </li>
              <li className="nav-item">

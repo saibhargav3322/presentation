@@ -65,14 +65,19 @@ function Getorders(props) {
 
              const completedby=(a)=>{
                 axios.get("http://localhost:9096/washer/completeanorder/"+a).then(res=>{
+                    notify()
                     console.log(res.data);
                 }).catch(err=>{
                     console.log(err)
                     
                 })
-                window.location.reload()
+
             }
 
+            const notify=()=>{                toast("Order Completed!")
+            setTimeout(function(){
+               window.location.reload(1);
+            }, 3000);}
 
              const statuscheck=(a,b)=>{
 
@@ -94,20 +99,21 @@ function Getorders(props) {
     return (
         <div>
 <Ordernav/>
+<br/>
 <h1>Your Completed Orders</h1>
 
-<table class="table table-striped table-responsive-md btn-table">
+<table class="table table-striped table-responsive-md btn-table" style={{margin:"50px 50px 0px 200px",width:"1100px",border:"2px solid skyblue",borderRadius:'5px'}}>
 <thead className="thead-dark">
 <tr>
 
 
 <th>CustomerName</th>
-<th>carname</th>
-<th>status</th>
-<th>date</th>
-<th>payment</th>
-<th>washpack id</th>
-<th>washpack name</th>
+<th>Carname</th>
+<th>Status</th>
+<th>Date</th>
+<th>Payment</th>
+<th>Washpack id</th>
+<th>Washpackname</th>
 <th></th>
 </tr>
 </thead>
@@ -133,7 +139,7 @@ function Getorders(props) {
 }
 </tbody>
 </table>
-
+<ToastContainer></ToastContainer>
 </div>
     );
 }

@@ -41,19 +41,20 @@ function Ratings(props) {
     return (
 <div>
     <Adminnav></Adminnav>
- 
+ <br/>
 <h1>Ratings</h1>
-<p>Enter washer username to search:   <input type="text" placeholder="username" onChange={e=>setWasherUsername(e.target.value)} className='reservatioinsearch' />
+<br/>
+<p style={{fontWeight:"bold"}}>Enter washer username to search :   <input type="text" placeholder="username" onChange={e=>setWasherUsername(e.target.value)} className='reservatioinsearch' />
 
 </p>
-<table class="table table-striped table-responsive-md btn-table">
+<table class="table table-striped table-responsive-md btn-table" style={{margin:"50px 50px 0px 200px",width:"1100px",border:"2px solid skyblue",borderRadius:'5px'}}>
 <thead className="thead-dark">
 <tr>
 
 <th>CustomerName</th>
 <th>WasherUsername</th>
-<th>comment</th>
-<th>rating</th>
+<th>Comment</th>
+<th>Rating</th>
 </tr>
 </thead>
 <tbody>

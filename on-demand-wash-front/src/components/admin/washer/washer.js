@@ -65,19 +65,20 @@ function Washer(props) {
     return (
 <div>
     <Adminnav></Adminnav>
- 
-<h1>Ratings</h1>
-<p>Enter customer username to search:   <input type="text" placeholder="username" onChange={e=>setwasherUsername(e.target.value)} className='reservatioinsearch' />
+ <br/>
+<h1>All Washers</h1>
+<br/>
+<p style={{fontWeight:'bold'}}>Enter washer username to search:   <input type="text" placeholder="username" onChange={e=>setwasherUsername(e.target.value)} className='reservatioinsearch' />
 
 </p>
-<table class="table table-striped table-responsive-md btn-table">
+<table class="table table-striped table-responsive-md btn-table" style={{margin:"50px 50px 0px 250px",width:"1100px",border:"2px solid skyblue",borderRadius:'5px'}}>
 <thead className="thead-dark">
 <tr>
 
 <th>CustomerName</th>
 <th>Username</th>
-<th>gmail</th>
-<th>location</th>
+<th>Gmail</th>
+<th>Location</th>
 </tr>
 </thead>
 <tbody>
@@ -97,7 +98,7 @@ function Washer(props) {
             <td>{d.username}</td>
             <td>{d.gmail}</td>
             <td>{d.location}</td>
-            <td><button onClick={()=>deleteuser(d.username)}>Delete</button></td>
+            <td><button onClick={()=>deleteuser(d.username)}  className="btn btn-outline-primary btn-sm m-0 waves-effect" style={{backgroundColor:'red', color:'white',width:"90px"}}>Delete</button></td>
             <ToastContainer></ToastContainer>
         </tr>
     ))
