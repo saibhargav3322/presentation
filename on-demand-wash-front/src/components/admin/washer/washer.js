@@ -75,7 +75,7 @@ function Washer(props) {
 <thead className="thead-dark">
 <tr>
 
-<th>CustomerName</th>
+<th>WasherName</th>
 <th>Username</th>
 <th>Gmail</th>
 <th>Location</th>

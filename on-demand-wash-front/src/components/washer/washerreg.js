@@ -52,7 +52,7 @@ function Register() {
         <React.Fragment>
         <Washernav></Washernav>
       <form className='register' onSubmit={handleSubmit}>
-      <img src='./images/regpic.jpg' className='regimage' alt='blank'></img>
+      <img src='./images/regpic.jpg' className='regimage' alt='blank' style={{filter:"blur(10px)"}}></img>
           <h2 className='signup'>Sign up</h2>
           <div className="form-group">
             <label>name</label>

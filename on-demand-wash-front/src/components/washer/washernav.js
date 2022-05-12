@@ -35,7 +35,7 @@ function Usernav(props) {
                </Link>
              </li> */}
                <li className="nav-item">
-               <Link to={"/washerordernav"} className="nav-link">
+               <Link to={"/washerorderpending"} className="nav-link">
                  Orders
                </Link>
              </li>

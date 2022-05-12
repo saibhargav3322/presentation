@@ -24,7 +24,7 @@ function Login()  {
     const notify = ()=>{
  
         // Calling toast method by passing string
-        toast('invalid')
+        toast('Invalid Credientials')
     }
 
     const handleSubmit = e => {
@@ -41,6 +41,7 @@ function Login()  {
         .catch(err => {
 
             setError("Invalid Credientials")
+            notify();
         })
     };
 
@@ -54,11 +55,12 @@ function Login()  {
         <React.Fragment>
         <Navbar/>
         <form className='loginForm' onSubmit={handleSubmit}>
-        <img src='/images/loginfinal.jpg' className='image'></img>
+        <img src='/images/loginfinal.jpg' className='image' style={{filter:"blur(7px)",top:"-30px"}}></img>
+        <br/>
 {/* <Link className='navbar-brand' to={'/'}>Home</Link> */}
         <h2 className='login'>Login</h2>
 
-        {error && <div style={style} >{error}</div>}
+        {/* {error && <div style={style} >{error}</div>} */}
         <div className="mb-3">
           <label>username</label>      
           <input type="text" className="form-control" placeholder="username" 
@@ -76,6 +78,7 @@ function Login()  {
       </div>
       
     </form>
+    <ToastContainer></ToastContainer>
     </React.Fragment>
     )
 }

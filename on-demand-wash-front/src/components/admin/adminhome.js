@@ -6,11 +6,12 @@ function Adminhome(props) {
         <div>
             <Adminnav></Adminnav>
             <div >
-                <br/>
-                <br/>
 
-       <img  src='./images/admin.jpg'  style={{width: '1000px', borderRadius:'80px', position: 'absolute', right:'240px'}} />
-       <br/>
+       <img  src='./images/adminhome.jpg'  style={{width: '100%', position: 'absolute', right:'0px',filter:"grayscale(0%) blur(3px)"}} />
+      
+      <h1  style={{ position:'relative',top:"230px",fontSize:"60px"}}>Welcome Admin</h1>
+      <h5  style={{ position:'relative',top:"230px",fontSize:"20px",marginLeft:"400px"}}>The seat is yours..</h5>
+       {/* <br/>
           <br/>
         <h2  style={{ position:'relative', top:'120px', fontWeight:'800',fontStyle:'italic', fontSize: '60px', color:'navy',fontFamily:'algerian'}} > 
 
@@ -20,8 +21,8 @@ function Adminhome(props) {
     direction='right'
     height='70px'> Welcome Admin </marquee>  
               
-              </h2>      
-         </div>
+              </h2>*/}      
+         </div> 
         </div>
     );
 }

@@ -104,7 +104,7 @@
     z-index: 1;
   }
 
-  .nav-links {
+  /* .nav-links {
     text-align: center;
     padding: 2rem;
     width: 100%;
@@ -115,7 +115,7 @@
     background-color: #fff;
     color: #242424;
     border-radius: 0;
-  }
+  } */
 
   .navbar-logo {
     position: absolute;

@@ -45,13 +45,13 @@ function Usernav(props) {
                </a>
              </li> */}
              <li className="nav-item">
-               <a href="/adminpacksnav" className="nav-link" >
+               <a href="/adminpacks" className="nav-link" >
                  WashPacks
                </a>
              </li>
 
              <li className="nav-item">
-               <a href="/adminordersnav" className="nav-link" >
+               <a href="/adminpending" className="nav-link" >
                  AllOrders
                </a>
              </li>

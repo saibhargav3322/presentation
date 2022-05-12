@@ -111,7 +111,7 @@ function Getorders(props) {
 <th>Carname</th>
 <th>Status</th>
 <th>Date</th>
-<th>Payment</th>
+<th>PhoneNumber</th>
 <th>Washpack id</th>
 <th>Washpackname</th>
 <th></th>
@@ -130,7 +130,7 @@ function Getorders(props) {
             <td>{d.carModel}</td>
             <td>{d.status}</td>
             <td>{d.date}</td>
-            <td>{d.payment}</td>
+            <td>{d.phone_number}</td>
             <td>{d.washpack.id}</td>
             <td>{d.washpack.name}</td>
             {statuscheck(d.status,d.id)}

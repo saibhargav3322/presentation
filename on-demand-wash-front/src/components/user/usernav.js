@@ -35,32 +35,32 @@ function Usernav(props) {
        {currentUser ? (
            <div className="navbar-nav ms-auto">   
              <li className="nav-item">
-               <a href="/userhome" className="nav-link" >
+               <Link to="/userhome" className="nav-link" >
                  UserHome
-               </a>
+               </Link>
              </li>
 
              <br></br>
              <li className="nav-item">
-               <a href="/addorder" className="nav-link" >
+               <Link to="/addorder" className="nav-link" >
                  Addorder
-               </a>
+               </Link>
              </li>
              <br></br>
              <li className="nav-item">
-               <a href="/getorders" className="nav-link" >
+               <Link to="/getorders" className="nav-link" >
                  Orderstatus
-               </a>
+               </Link>
              </li>
              <li className="nav-item">
-               <a href="/userupdate" className="nav-link" >
+               <Link to="/userupdate" className="nav-link" >
                  Profile
-               </a>
+               </Link>
              </li>
              <li className="nav-item">
-               <a href="/" className="nav-link" onClick={logOut} >
+               <Link to="/" className="nav-link" onClick={logOut} >
                  Logout
-               </a>
+               </Link>
              </li>
            </div>
          ) 
@@ -73,9 +73,9 @@ function Usernav(props) {
             <div className="navbar-nav ms-auto">
 
 <li className="nav-item">
-               <a href="/userhome" className="nav-link" >
+               <Link to="/userhome" className="nav-link" >
                  UserHome
-               </a>
+               </Link>
              </li>
              <li className="nav-item">
                <Link to={"/userlogin"} className="nav-link">

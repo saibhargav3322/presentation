@@ -59,7 +59,8 @@ function Register() {
         <React.Fragment>
         <Navbar/>
       <form className='register' onSubmit={handleSubmit}>
-          <img src='./images/regpic.jpg' className='regimage'></img>
+          <img src='./images/regpic.jpg' className='regimage' style={{filter:"blur(10px)"}}></img>
+          <br/>
           <h2 className='signup'>Sign up</h2>
           <div className="form-group">
             <label>name</label>

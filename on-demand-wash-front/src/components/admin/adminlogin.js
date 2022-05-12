@@ -42,24 +42,25 @@ function Login()  {
     return (<>
     
         <Adminnav></Adminnav>
+        <br/>
         <form className='loginForm' onSubmit={handleSubmit}>
-        <img src='/images/loginfinal.jpg' className='image'></img>
+        <img src='/images/loginfinal.jpg' className='image' style={{filter:"blur(7px)",top:"-30px"}}></img>
         <h2 className='login'>Login</h2>
 
-        <div className="form-group">
+        <div className="mb-3">
           <label>username</label>
           <input type="text" className="form-control" placeholder="username" 
           onChange={e=>handle(e)} id="name" value={data.username}/>
       </div>
        
-      <div className="form-group">
+      <div className="mb-3">
           <label>password</label>
           <input type="password" className="form-control" placeholder="password" 
            onChange={e=>handle(e)} id="password" value={data.password}/>
       </div>
 
-      <div className='form-group'>
-          <button className='btn btn-primary btn-block' >Login</button>
+      <div className='d-grid'>
+          <button className='btn btn-primary' >Login</button>
       </div>
       
     </form>

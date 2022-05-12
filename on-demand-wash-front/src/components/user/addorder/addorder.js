@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../usernav'
@@ -15,8 +15,10 @@ function Addorder(props) {
         streetname:"",  
         landmark:"",
         packid:"",
-        payment:"success"
+        payment:"success",
+        phonenumber:""
     })
+    const [pack,setPack]=useState([])
 
     const navigate=useNavigate();
     const [error,setError]=useState();
@@ -41,9 +43,10 @@ function Addorder(props) {
                const landmark=data.landmark
                const packid=data.packid
                const  payment=data.payment
+               const phonenumber=data.phonenumber
                 
             e.preventDefault();
-            axios.post(url,null,{params:{carbrand,carmodel,date,housenumber,streetname,landmark,packid,payment}} )
+            axios.post(url,null,{params:{carbrand,carmodel,date,housenumber,streetname,landmark,packid,payment,phonenumber}} )
                 .then(res=>{
                     console.log(res.data);
                     notify();
@@ -77,6 +80,16 @@ function Addorder(props) {
             newdata[e.target.id]=e.target.value
             setData(newdata)
         }
+
+        const get=()=>{
+            axios.get("http://localhost:9095/user/allpacks").then(res=>{
+                setPack(res.data)
+            })
+        }
+
+        useEffect(() => {
+            get();
+             }, []);
     return (
         <React.Fragment> 
             <Navbar/>
@@ -114,6 +127,10 @@ function Addorder(props) {
                 <label>Packid </label>
                 <input onChange={(e)=>handle(e)} id="packid" value={data.packid} placeholder='packid' type="number" className='form-control'/>
                 </div>
+                <div className='form-group'>
+                <label>PhoneNo. </label>
+                <input onChange={(e)=>handle(e)} id="phonenumber" value={data.phonenumber} placeholder='phonenumber' type="text" className='form-control'/>
+                </div>
                 {/* <label>payment: </label>
                 <input onChange={(e)=>handle(e)}  id="payment" value={data.payment} placeholder='payment' type="text"/><br/><br/> */}
 
@@ -122,6 +139,34 @@ function Addorder(props) {
             </form>
             <ToastContainer></ToastContainer>
         </div>
+        <table class="table table-striped table-responsive-md btn-table" style={{margin:"50px 50px 0px 190px",width:"1200px",border:"2px solid skyblue",borderRadius:'5px'}}>
+<thead className="thead-dark">
+<tr>
+
+<th>Id</th>
+<th>Title</th>
+<th>Description</th>
+<th>Cost</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+
+{
+   pack.map(d=>(
+        <tr key={d.id}>
+
+            <td>{d.id}</td>
+            <td>{d.name}</td>
+            <td>{d.description}</td>
+            <td>{d.cost}</td>
+        </tr>
+    ))
+}
+</tbody>
+</table>
+
     </React.Fragment>
     );
 }

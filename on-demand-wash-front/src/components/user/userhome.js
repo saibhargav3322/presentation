@@ -5,6 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import Orders from './getorders/Getorders'
 import Footer from '../../components/Home/Footer';
 import Link from 'react-dom'
+import Section from '../Home/Services'
+
+
 function Userhome(props) {
 
     const navigate=useNavigate();
@@ -12,10 +15,12 @@ function Userhome(props) {
     return (
       <div>
           <Navbar/>
-          <br></br>
      <div >
-     <img  src='./images/location.jpg'  style={{width: '1200px', borderRadius:'80px', position: 'absolute', right:'140px'}} />
-        <br/>
+     <img  src='./images/userhome.jpg'  style={{width: '100%', position: 'absolute',right:"0px",height:"100%",filter:"grayscale(0%) blur(4px)"}} />
+       
+       <h1 style={{color:"gold", position:'relative',top:"200px",fontSize:"60px"}}>Welcome to Clean Car Wash</h1>
+       <h6 style={{color:"white", position:'relative',top:"220px",fontSize:"20px",marginLeft:"450px"}}>You are few steps away to order dream wash for your car....</h6>
+        {/* <br/>
         <br/>
       <h2  style={{ position:'relative', top:'120px', fontWeight:'700',fontStyle:'italic', fontSize: '50px'}}> We are offering our services in these locations  </h2>      
          <br/><br/>
@@ -32,12 +37,13 @@ function Userhome(props) {
           <br/>
           <p style={{ fontSize:'25px',textAlign:'center',color:'orangered'}}> We are expanding our services all over India soon.....</p>
 
-        </ul>
+        </ul> */}
      </div>
    <br/><br/>
+   {/* <Section></Section> */}
    <div>
-   <div style={{position:"absolute",top:"800px"}}>
-          <div class='flip-card'>
+   <div style={{position:"absolute",top:"820px"}}>
+   <div class='flip-card'>
             <div className='flip-card-inner'>
               <div class='flip-card-front'>
                 <br/><br/><br/>
@@ -95,8 +101,8 @@ function Userhome(props) {
               
               <div class='flip-card-front'>
               <br/><br/><br/>
-                <h2>Ultimate Wash</h2>
-                <h1 className='mo'>Rs.999</h1>
+                <h2>Foam Wash</h2>
+                <h1 className='mo'>Rs.1299</h1>
               </div>
               <div class='flip-card-back'>
                 <p>The Super Wash plus…</p>
@@ -112,7 +118,7 @@ function Userhome(props) {
             <div className='flip-card-inner'>
               <div class='flip-card-front'>
               <br/><br/><br/>
-                <h2>The Wheel Deal</h2>
+                <h2>Dhamaka Deal</h2>
                 <h1 className='mo'>Rs.1499</h1>
               </div>
               <div class='flip-card-back'>
@@ -131,8 +137,8 @@ function Userhome(props) {
             <div className='flip-card-inner'>
               <div class='flip-card-front'>
               <br/><br/><br/>
-                <h2>The Wheel Deal</h2>
-                <h1 className='mo'>Rs.1499</h1>
+                <h2>No Water Wash</h2>
+                <h1 className='mo'>Rs.1199</h1>
               </div>
               <div class='flip-card-back'>
                 <p>Deluxe Wash Package plus…</p>
@@ -150,8 +156,8 @@ function Userhome(props) {
             <div className='flip-card-inner'>
               <div class='flip-card-front'>
               <br/><br/><br/>
-                <h2>The Wheel Deal</h2>
-                <h1 className='mo'>Rs.1499</h1>
+                <h2>Exterior Wash</h2>
+                <h1 className='mo'>Rs.899</h1>
               </div>
               <div class='flip-card-back'>
                 <p>Deluxe Wash Package plus…</p>
@@ -169,8 +175,8 @@ function Userhome(props) {
             <div className='flip-card-inner'>
               <div class='flip-card-front'>
               <br/><br/><br/>
-                <h2>The Wheel Deal</h2>
-                <h1 className='mo'>Rs.1499</h1>
+                <h2>Interior Wash</h2>
+                <h1 className='mo'>Rs.699</h1>
               </div>
               <div class='flip-card-back'>
                 <p>Deluxe Wash Package plus…</p>

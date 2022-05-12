@@ -52,10 +52,10 @@ function Addpack(props) {
     return (
         <div>
               <Washnav/>
-              <br/>
-               <h2>Add Pack Details</h2>
-               <br/>
+              <br/><br/>
+               <h2 className='signup'>Add Pack Details</h2>
    <form onSubmit={(e)=>submit(e)} className='register'>
+   <img src='./images/regpic.jpg' className='regimage' style={{filter:"blur(90px)"}}></img>
    <div className='form-group'>
                 <label>Id: </label>
                 <input onChange={(e)=>handle(e)} id="id" value={data.id} placeholder='id' type="number" className='form-control' />
@@ -72,7 +72,9 @@ function Addpack(props) {
                 <label>Description: </label>
                 <input onChange={(e)=>handle(e)} id="description" value={data.description} placeholder='description' type="text" className='form-control'/>
                 </div>
+                <div className='form-group'>
                 <button  className='btn btn-primary btn-block'>Submit</button>
+                </div>
                 <ToastContainer></ToastContainer>
                 </form>
  

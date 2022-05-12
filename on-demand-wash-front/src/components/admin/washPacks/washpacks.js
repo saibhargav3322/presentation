@@ -153,6 +153,7 @@ function Washpacks(props) {
 {/* <p>Enter washer username to search:   <input type="text" placeholder="username" onChange={e=>setWasherUsername(e.target.value)} className='reservatioinsearch' />
 
 </p> */}
+
 <table class="table table-striped table-responsive-md btn-table" style={{margin:"50px 50px 0px 190px",width:"1200px",border:"2px solid skyblue",borderRadius:'5px'}}>
 <thead className="thead-dark">
 <tr>
